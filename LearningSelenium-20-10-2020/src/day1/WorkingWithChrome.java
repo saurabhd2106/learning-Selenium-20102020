@@ -14,12 +14,11 @@ public class WorkingWithChrome {
 		
 		driver = new ChromeDriver();
 		
-		Dimension dim = new Dimension(1024, 680);
-		
-		
 		
 		//Maximize the browser's screen
 		driver.manage().window().maximize();
+		
+		Dimension dim = new Dimension(1024, 680);
 		
 		driver.manage().window().setSize(dim);
 		
