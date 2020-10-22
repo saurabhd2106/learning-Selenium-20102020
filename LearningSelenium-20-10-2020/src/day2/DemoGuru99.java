@@ -12,7 +12,7 @@ public class DemoGuru99 {
 		
 		String titleOFThePage = guru.getTitle();
 		
-		System.out.println("Title of the page - "+ titleOFThePage);
+		/*System.out.println("Title of the page - "+ titleOFThePage);
 		
 		guru.addCustomer();
 		
@@ -20,7 +20,9 @@ public class DemoGuru99 {
 		
 		System.out.println("Customer Id - "+ customerId);
 		
-		guru.addAccount(customerId);
+		guru.addAccount(customerId);*/
+		
+		guru.logout();
 		
 		guru.closeBrowser();
 		

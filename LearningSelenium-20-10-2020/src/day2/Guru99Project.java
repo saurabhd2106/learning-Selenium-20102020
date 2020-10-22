@@ -1,5 +1,6 @@
 package day2;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -95,6 +96,26 @@ public class Guru99Project {
 		driver.findElement(By.name("inideposit")).sendKeys("32487");
 		
 		driver.findElement(By.name("button2")).click();
+		
+	}
+	
+	public void logout() {
+		driver.findElement(By.linkText("Log out")).click();
+		
+		Alert alert = driver.switchTo().alert();
+		
+		System.out.println(alert.getText());
+		
+		try {
+			
+			Thread.sleep(5000);
+			
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		
+		alert.accept();
 		
 	}
 

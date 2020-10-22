@@ -33,18 +33,44 @@ public class AmazonLinkExample {
 		return allLinks.size();
 	}
 
+	public String getLinkUrl(String linktext) {
+
+		WebElement link = driver.findElement(By.linkText(linktext));
+
+		return link.getAttribute("href");
+
+	}
+
+	public void getAllLinkInfo() {
+		List<WebElement> allLink = driver.findElements(By.tagName("a"));
+
+		for (WebElement element : allLink) {
+
+			System.out.println("Linktext - " + element.getText() + " and the URL is - " + element.getAttribute("href"));
+
+			System.out.println("---------------------------------------------------------------------------------");
+
+		}
+	}
+
 	public void closeBrowser() {
 		driver.quit();
 	}
-	
+
 	public static void main(String[] args) {
 		AmazonLinkExample amazonLink = new AmazonLinkExample();
-		
+
 		amazonLink.invokeBrowser();
-		
+
+		String linkUrl = amazonLink.getLinkUrl("Amazon Pay");
+
+		System.out.println("Link URL - " + linkUrl);
+
 		int linkCount = amazonLink.getLinkCount();
-		
-		System.out.println("Link Count - "+ linkCount);
+
+		System.out.println("Link Count - " + linkCount);
+
+		amazonLink.getAllLinkInfo();
 	}
 
 }
