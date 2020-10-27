@@ -10,7 +10,7 @@ public class DemoTestJdbc {
 			
 			TestJdbc testJdbc = new TestJdbc();
 			
-			testJdbc.openConnection("localhost", "TestDatabase", 3306, "root", "admin@1234");
+			testJdbc.openConnection("localhost", "TestDatabase", 3306, "root", "dmin@1234");
 			
 			System.out.println("Connection Established...");
 			
@@ -29,7 +29,21 @@ public class DemoTestJdbc {
 			System.out.println("Connection closed....");
 			
 		} catch (SQLException e) {
-			System.out.println("Some execption occured.. command exeution unsuccessful..");
+			
+			switch (e.getErrorCode()) {
+			case 1045:
+				System.out.println("Access denied, Username or password incorrect");
+				System.out.println(e.getErrorCode() + " " + e.getMessage());
+				break;
+
+			default:
+				System.out.println("Some execption occured.. command exeution unsuccessful..");
+				
+				
+				break;
+			}
+			
+			
 			e.printStackTrace();
 		}
 	}
