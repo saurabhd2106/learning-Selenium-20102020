@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="tests">
+	<test thread-count="5" name="Chrome Test">
+		<parameter name="browserType" value="chrome"></parameter>
+
+		<classes>
+			<class name="dataDriven.Guru99Project"></class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Test Suite -->

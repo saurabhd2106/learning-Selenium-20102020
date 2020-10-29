@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/home/saurabhd2106gma/Desktop/libs/selenium-server-standalone-3.141.59.jar"/>
 	<classpathentry kind="lib" path="/home/saurabhd2106gma/Desktop/libs/mysql-connector-java-8.0.22.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
